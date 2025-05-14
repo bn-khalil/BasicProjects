@@ -14,6 +14,9 @@ public class App {
                 String userInput = in.nextLine();
                 time = LocalTime.parse(userInput, form);
                 System.out.println("alarm set at " + time);
+                Alarm ar = new Alarm(time);
+                Thread tr = new Thread(ar);
+                tr.start();
             } catch (Exception e) {
                 System.out.println("invalid time formatte enter again!");
             }
